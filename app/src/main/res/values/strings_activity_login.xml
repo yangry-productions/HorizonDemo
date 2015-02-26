@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Strings related to login -->
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">SIGN IN</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_username">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_username_not_found">Username not found</string>
+    <string name="forgotUsername">Forgot my Username</string>
+    <string name="forgotPassword">Forgot my Password</string>
+    <string name="registerAccount">Register New Account</string>
+</resources>

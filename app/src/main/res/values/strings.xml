@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Horizon</string>
+    <string name="title_activity_loading">LoadingActivity</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="loading_app">Loading Horizon</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="logo">Logo</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="welcomeMessage">WELCOME TO HORIZON</string>
+    <string name="loadingMessage">Loading app. One moment, please.</string>
+    <string name="title_activity_account_summary">AccountSummaryActivity</string>
+    <string name="accessingAccountMessage">Accessing account. One moment, please.</string>
+    <string name="hi">Hi,</string>
+    <string name="lastSaw">We last saw you </string>
+    <string name="daysAgo"> days ago.</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="exchangeRateMsg">Today\'s Rate</string>
+    <string name="exchangeRateMsg2">CAD 1.00 = PHP </string>
+    <string name="pendingTransfersMsg">PENDING TRANSFERS</string>
+    <string name="sendMoneyButtonText">SEND MONEY</string>
+    <string name="noTransfersMsg">No Transfers Pending</string>
+    <string name="noTransferInstruction">Click SEND MONEY to begin a new fund transfer</string>
+    <string name="pendingTransferMsg1">Estimated Time of Delivery</string>
+    <string name="tempUsername">Username</string>
+    <string name="tempLastSawDaysAgo">X</string>
+    <string name="tempCurrentDate">(today\'s date)</string>
+    <string name="tempExchangeRate">40.37</string>
+    <string name="tempText">Error: Missing Info</string>
+    <string name="title_activity_transfer">TransferActivity</string>
+    <string name="title_activity_transfer_detail">TransferDetailActivity</string>
+    <string name="transferSummaryMsg1">TRANSFER</string>
+    <string name="transferSummaryMsg2">SUMMARY</string>
+    <string name="OkText">OK</string>
+    <string name="NextText">NEXT</string>
+    <string name="recipientNameMsg"><u>Recipient Name</u></string>
+    <string name="destinationBankMsg"><u>Destination Bank</u></string>
+    <string name="accountMsg"><u>Account</u></string>
+    <string name="sendingAmountMsg"><u>What You\'re Sending</u></string>
+    <string name="receivingAmountMsg"><u>What\'s Being Received</u></string>
+    <string name="confirmationNumberMsg"><u>Your Confirmation Number</u></string>
+    <string name="selectRecipientsDialogTitle">TO WHOM?</string>
+    <string name="howMuchDialogTitle">HOW MUCH?</string>
+    <string name="inputSendingAmountHint">Amount (CAD)</string>
+    <string name="transferTermsDialogTitle">TRANSFER TERMS</string>
+    <string name="paymentOptionDialogTitle">PAYMENT OPTIONS</string>
+    <string name="paymentOptionDialogMsg">Please choose your payment method</string>
+
+</resources>

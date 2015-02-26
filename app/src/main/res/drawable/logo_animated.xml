@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+    android:id="@+id/selected"
+    android:oneshot="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/logo_animated_f00" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f01" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f02" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f03" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f04" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f05" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f06" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f07" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f08" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f09" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f10" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f11" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f12" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f13" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f14" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f15" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f16" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f17" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f18" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f19" android:duration="80" />
+    <item android:drawable="@drawable/logo_animated_f20" android:duration="80" />
+</animation-list>

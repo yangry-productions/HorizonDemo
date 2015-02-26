@@ -1,0 +1,192 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.horizon.demo.horizondemo.TransferDetailActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:id="@+id/linearLayout_transferSummaryTitle">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:src="@drawable/horizon_logo_text2"
+            android:layout_gravity="center_horizontal"
+            android:cropToPadding="false" />
+
+        <TextView
+            android:id="@+id/textView_transfer_summary_msg1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/transferSummaryMsg1"
+            android:layout_gravity="left"
+            android:elegantTextHeight="false"
+            android:textSize="30sp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+
+        <TextView
+            android:id="@+id/textView_transfer_summary_msg2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/transferSummaryMsg2"
+            android:layout_gravity="left"
+            android:elegantTextHeight="false"
+            android:textSize="40sp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="-10dp" />
+
+        <View
+            android:id="@+id/layout_divider_transfer_summary"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            android:layout_marginTop="@dimen/padding_size"
+            android:layout_marginBottom="@dimen/padding_size" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView2"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/buttonTransferOk"
+        android:layout_below="@+id/linearLayout_transferSummaryTitle">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:id="@+id/textView_recipientNameMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/recipientNameMsg" />
+
+            <TextView
+                android:id="@+id/textView_recipientName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/tempText"
+                android:layout_marginLeft="@dimen/indent"
+                android:textSize="@dimen/summary_text_size" />
+
+            <TextView
+                android:id="@+id/textView_destinationBankMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/destinationBankMsg"
+                android:layout_marginTop="@dimen/padding_size" />
+
+            <TextView
+                android:id="@+id/textView_destinationBank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/tempText"
+                android:layout_marginLeft="@dimen/indent"
+                android:textSize="@dimen/summary_text_size" />
+
+            <TextView
+                android:id="@+id/textView_accountMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/accountMsg"
+                android:layout_marginTop="@dimen/padding_size" />
+
+            <TextView
+                android:id="@+id/textView_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/tempText"
+                android:layout_marginLeft="@dimen/indent"
+                android:textSize="@dimen/summary_text_size" />
+
+            <TextView
+                android:id="@+id/textView_sendingAmountMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/sendingAmountMsg"
+                android:layout_marginTop="@dimen/padding_size" />
+
+            <TextView
+                android:id="@+id/textView_sendingAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/tempText"
+                android:layout_marginLeft="@dimen/indent"
+                android:textSize="@dimen/summary_text_size" />
+
+            <TextView
+                android:id="@+id/textView_receivingAmountMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/receivingAmountMsg"
+                android:layout_marginTop="@dimen/padding_size" />
+
+            <TextView
+                android:id="@+id/textView_receivingAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/tempText"
+                android:layout_marginLeft="@dimen/indent"
+                android:textSize="@dimen/summary_text_size" />
+
+            <TextView
+                android:id="@+id/textView_confirmationNumberMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/confirmationNumberMsg"
+                android:layout_marginTop="@dimen/padding_size" />
+
+            <TextView
+                android:id="@+id/textView_confirmationNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/tempText"
+                android:layout_marginLeft="@dimen/indent"
+                android:textSize="@dimen/summary_text_size" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/buttonTransferOk"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/OkText"
+        android:background="@color/horizonGreen"
+        android:singleLine="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_text_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="okButtonSelected" />
+
+</RelativeLayout>

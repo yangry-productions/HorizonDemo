@@ -1,0 +1,9 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="horizonGreen">#ff00aa1e</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#FFDADADA</color>
+    <color name="grey_light">#96D2DCE6</color>
+
+</resources>

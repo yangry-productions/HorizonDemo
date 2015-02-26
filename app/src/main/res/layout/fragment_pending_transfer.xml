@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.horizon.demo.horizondemo.AccountSummaryActivity$pendingTransferFragment"
+    android:background="@color/grey_light"
+    android:rowCount="1"
+    android:columnCount="2"
+    android:id="@+id/pendingTransferFragmentLayout">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:id="@+id/pendingTransferMsgTextView1"
+        android:text="@string/pendingTransferMsg1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/padding_size" />
+
+    <TextView
+        android:id="@+id/pendingTransferTimeTextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="02:15"
+        android:layout_row="0"
+        android:textSize="40sp"
+        android:layout_alignStart="@+id/pendingTransferTimeTextView2"
+        android:layout_below="@+id/pendingTransferMsgTextView1"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+
+    <TextView
+        android:id="@+id/pendingTransferTimeTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1:48AM "
+        android:layout_row="0"
+        android:layout_below="@+id/pendingTransferTimeTextView1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+
+    <TextView
+        android:id="@+id/pendingTransferMsgTextView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Local Time"
+        android:layout_row="0"
+        android:layout_alignTop="@+id/pendingTransferTimeTextView2"
+        android:layout_toRightOf="@+id/pendingTransferTimeTextView2"
+        android:layout_marginLeft="5dp" />
+
+    <TextView
+        android:id="@+id/pendingTransferRecipientTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sonya Serrano-Wu"
+        android:layout_row="0"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="true"
+        android:textSize="18sp"
+        android:layout_alignTop="@+id/pendingTransferTimeTextView1"
+        android:layout_marginRight="@dimen/activity_horizontal_margin" />
+
+    <TextView
+        android:id="@+id/pendingTransferAmountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="200.00"
+        android:layout_row="0"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:textSize="25sp"
+        android:textIsSelectable="false"
+        android:layout_below="@+id/pendingTransferRecipientTextView"
+        android:layout_marginRight="@dimen/activity_horizontal_margin" />
+
+    <TextView
+        android:id="@+id/pendingTransferCurrencyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CAD "
+        android:layout_row="0"
+        android:layout_alignTop="@+id/pendingTransferAmountTextView"
+        android:layout_toLeftOf="@+id/pendingTransferAmountTextView"
+        android:layout_marginTop="5dp" />
+
+</RelativeLayout>

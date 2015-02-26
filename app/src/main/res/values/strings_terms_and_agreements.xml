@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="transferTerms">You are buying Philippine Peso (PHP) with Canadian Dollars (CAD) \@ the stated current rate.
+        \n\nOnce PHP is purchased, the PHP, along with the recipient information you\'ve selected, will be automatically transferred to a fulfilment agent, who will then deliver your PHP as per delivery instructions.
+        \n\nBy clicking on the agree button below, you are accepting the process described above as well as all terms and conditions.
+    </string>
+</resources>

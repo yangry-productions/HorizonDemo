@@ -1,0 +1,207 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:layout_height="fill_parent"
+    tools:context="com.horizon.demo.horizondemo.AccountSummaryActivity"
+    android:background="@drawable/background"
+    android:animateLayoutChanges="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:animateLayoutChanges="true">
+
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:src="@drawable/horizon_logo_text2"
+            android:layout_gravity="center_horizontal"
+            android:cropToPadding="false" />
+
+        <ProgressBar
+            android:id="@+id/accessingAccountProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="@color/horizonGreen"
+            android:progressBackgroundTint="@android:color/transparent" />
+
+        <TextView
+            android:id="@+id/accessingAccountMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:text="@string/accessingAccountMessage"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/accountSummaryLayout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/greetingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/hi"
+            android:textSize="20sp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+
+        <TextView
+            android:id="@+id/usernameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="50sp"
+            android:textIsSelectable="false"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_below="@+id/greetingTextView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:singleLine="true"
+            android:layout_alignParentTop="false"
+            android:layout_marginTop="-10dp"
+            android:text="@string/tempUsername" />
+
+        <LinearLayout
+            android:id="@+id/lastSawTextViewLayout"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/usernameTextView"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:id="@+id/lastSaw1TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/lastSaw"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/lastSaw2TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:text="@string/tempLastSawDaysAgo"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp" />
+
+            <TextView
+                android:id="@+id/lastSaw3TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/daysAgo"
+                android:textStyle="bold"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@color/grey"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/lastSawTextViewLayout"
+            android:layout_marginTop="@dimen/activity_vertical_margin" />
+
+        <fragment
+            android:id="@+id/exchangeRateFragmentContainer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:name="com.horizon.demo.horizondemo.ExchangeRateFragment"
+            android:layout_below="@+id/view"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/padding_size"
+            android:layout_marginBottom="@dimen/padding_size" />
+
+        <TextView
+            android:id="@+id/pendingTransfersMsgTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/pendingTransfersMsg"
+            android:background="@color/grey"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:layout_below="@+id/exchangeRateFragmentContainer"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingTop="@dimen/padding_size"
+            android:paddingBottom="@dimen/padding_size"
+            android:textStyle="bold" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/linearLayout_noPendingTransfersMsg"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:gravity="center_horizontal"
+            android:background="@color/grey_light"
+            android:layout_below="@+id/pendingTransfersMsgTextView">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/noTransfersMsg" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/noTransferInstruction" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/listView_pendingTransfers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_above="@+id/buttonSendMoney"
+            android:layout_below="@+id/pendingTransfersMsgTextView" />
+
+        <Button
+            android:id="@+id/buttonSendMoney"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/sendMoneyButtonText"
+            android:background="@color/horizonGreen"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="startNewTransfer" />
+
+    </RelativeLayout>
+
+</LinearLayout>
