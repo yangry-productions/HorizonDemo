@@ -2,7 +2,6 @@ package com.horizon.demo.horizondemo;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -21,6 +20,7 @@ public class AccountSummaryActivity extends Activity {
 
     //global user object
     private User user;
+    private ExchangeRateFragment exchangeRate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,9 @@ public class AccountSummaryActivity extends Activity {
 
         //use asyncTask to load the user object linked to the username passed in from the previous activity
         new accessAccount().execute(username);
+
+        //instantiate new exchange rate fragment for use throughout this activity
+        exchangeRate = new ExchangeRateFragment();
     }
 
     @Override
@@ -66,7 +69,7 @@ public class AccountSummaryActivity extends Activity {
     }
 
     private class accessAccount extends AsyncTask<String, Integer, Boolean>{
-        private ProgressDialog loadingUserProgress = new ProgressDialog(AccountSummaryActivity.this);
+        //private ProgressDialog loadingUserProgress = new ProgressDialog(AccountSummaryActivity.this);
         ProgressBar mAccessingAccountProgress = (ProgressBar) findViewById(R.id.accessingAccountProgress);
         TextView mAccessingAccountMessage = (TextView) findViewById(R.id.accessingAccountMessage);
 
@@ -81,8 +84,8 @@ public class AccountSummaryActivity extends Activity {
             //read in fake recipients list
             Rid = getResources().getIdentifier(username[0] + "_recipients", "array", getPackageName());
             String[] recipients = getResources().getStringArray(Rid);
-            for (int i = 0; i < recipients.length; i++) {
-                String[] recipientInfo = recipients[i].split(":");
+            for (String recipient : recipients) {
+                String[] recipientInfo = recipient.split(":");
                 user.addRecipient(new Recipient(recipientInfo[0], recipientInfo[1]));
             }
 
@@ -122,6 +125,9 @@ public class AccountSummaryActivity extends Activity {
             tempTextView.setText("" + user.getLastLogin());  //TODO: the "days ago" is a string resource that does not change depending the number of days. E.g. doesn't change to "day ago" if user last logged in 1 day ago.
             findViewById(R.id.accountSummaryLayout).setVisibility(View.VISIBLE);
 
+            //load today's rate fragment
+            refreshExchangeRate();
+
 
 //            //fake adding pending transfers
 //            Transfer newTransfer = new Transfer(user, user.getRecipient(0), 100, 50, getApplicationContext());
@@ -136,6 +142,14 @@ public class AccountSummaryActivity extends Activity {
             //populate list of pending transfers from user object
             refreshPendingTransfers();
         }
+    }
+
+    private void refreshExchangeRate() {
+        getFragmentManager()
+                .beginTransaction()
+                //.add(R.id.exchangeRateContainer, new ExchangeRateFragment())
+                .add(R.id.exchangeRateContainer, exchangeRate)
+                .commit();
     }
 
     private void refreshPendingTransfers(){
@@ -219,11 +233,34 @@ public class AccountSummaryActivity extends Activity {
                 .create();
 
         //build the dialog box that asks user how much money to send
-        final View inputSendingAmount = inflater.inflate(R.layout.dialog_sending_amount, null);
+        final View inputSendingAmountView = inflater.inflate(R.layout.dialog_sending_amount, null);
+        //update and add the exchange rate info to the dialog box asking user to enter sending amount
+//        getFragmentManager()
+//                .beginTransaction()
+//                .add(R.id.linearLayout_dialogExchangeRateContainer, new ExchangeRateFragment())
+//                .commit();
+//
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this)
+//                .setTitle(getResources().getString(R.string.howMuchDialogTitle))
+//                .setCancelable(false)
+//                .setView(inputSendingAmount)
+//                .setPositiveButton("NEXT", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        //do nothing, onClickListener is overridden to check that user actually entered an amount
+//                    }
+//                });
+//        final AlertDialog askSendingAmountDialog = builder.create();
+//
+//        FrameLayout fl = (FrameLayout) askSendingAmountDialog.findViewById(android.R.id.custom);
+//        fl.addView(inputSendingAmount, new WindowManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+//
+//
+
         final AlertDialog askSendingAmountDialog = new AlertDialog.Builder(this)
             .setTitle(getResources().getString(R.string.howMuchDialogTitle))
             .setCancelable(false)
-            .setView(inputSendingAmount)
+            .setView(inputSendingAmountView)
             .setPositiveButton("NEXT", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -231,6 +268,7 @@ public class AccountSummaryActivity extends Activity {
                 }
             })
             .create();
+
         //when the ask sending amount dialog shows, check that the user entered an amount
         askSendingAmountDialog.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
@@ -239,7 +277,7 @@ public class AccountSummaryActivity extends Activity {
                 b.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View view){
-                        EditText temp = (EditText) inputSendingAmount.findViewById(R.id.editText_sendingAmount);
+                        EditText temp = (EditText) inputSendingAmountView.findViewById(R.id.editText_sendingAmount);
                         //check if user entered anything
                         if (temp.getText().toString().isEmpty())
                             //Show error message and do nothing

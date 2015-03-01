@@ -125,18 +125,17 @@
             android:layout_below="@+id/lastSawTextViewLayout"
             android:layout_marginTop="@dimen/activity_vertical_margin" />
 
-        <fragment
-            android:id="@+id/exchangeRateFragmentContainer"
-            android:layout_width="fill_parent"
+        <LinearLayout
+            android:id="@+id/exchangeRateContainer"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:name="com.horizon.demo.horizondemo.ExchangeRateFragment"
             android:layout_below="@+id/view"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="@dimen/padding_size"
-            android:layout_marginBottom="@dimen/padding_size" />
+            android:layout_alignParentStart="false"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/padding_size"
+            android:paddingBottom="@dimen/padding_size"></LinearLayout>
 
         <TextView
             android:id="@+id/pendingTransfersMsgTextView"
@@ -146,12 +145,12 @@
             android:text="@string/pendingTransfersMsg"
             android:background="@color/grey"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:layout_below="@+id/exchangeRateFragmentContainer"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:paddingTop="@dimen/padding_size"
             android:paddingBottom="@dimen/padding_size"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_below="@+id/exchangeRateContainer" />
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
