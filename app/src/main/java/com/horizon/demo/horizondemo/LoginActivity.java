@@ -42,8 +42,8 @@ public class LoginActivity extends Activity {//} implements LoaderCallbacks<Curs
         //TODO: re-enable splash screen after rest of app is done
         //Disable for now while developing the rest of the app
         //before showing login screen, show loading splash screen
-//        Intent intent = new Intent(this, SplashScreenActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this, SplashScreenActivity.class);
+        startActivity(intent);
 
         setContentView(R.layout.activity_login);
 
